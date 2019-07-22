@@ -1,0 +1,43 @@
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  color: #EAF6F6;
+  border-width: 7px;
+  width: 50%;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center;
+}
+
+.form-class{
+  margin: 2rem;
+}
+.btn{
+  margin-top: 1rem;
+}
+.display-data{
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+}
+ .footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: fixed;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #e9ecef;
+  margin-top: 2rem;
+}
+
+.footer p {
+	margin-top: 25px;
+  color: black !important;
+	font-size: 1rem;
+  color: #fff;
+}

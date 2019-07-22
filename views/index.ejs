@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mars photo api</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Mars Photo api</h1><br>
+        <p class="lead">This web application provides users with the ability to search for photos taken by NASA's <strong>Curiosity</strong> Mars rover. </p>
+      </div>
+    </div>
+    <form action="/" method="post" class="form-class">
+      <div class="form-group">
+    <input type="number" class="form-control" id="sol" input" name="sol" placeholder="Please Enter sol (Day on Mars)">
+  </div>
+  <select class="form-control" name="camera">
+    <option>FHAZ</option>
+    <option>RHAZ</option>
+    <option>MAST</option>
+    <option>CHEMCAM</option>
+    <option> MAHLI</option>
+    <option>MARDI</option>
+    <option>NAVCAM</option>
+</select>
+<button type="submit" class="btn btn-primary" name="submit">Find Photos</button>
+    </form>
+    <div class="display-data">
+
+      <% if(photo.length !== 0){%>
+        <h1> <strong>IMAGE RESULTS</strong> </h1><br>
+        <h2><strong>Sol:</strong> <%= sol %> || <strong>Camera Name:</strong> <%= camera %></h2>
+        <h3><strong>Earth Date: </strong> <%= date %> </h3>
+        <hr>
+        <% for(var i=0; i<photo.length; i+=3){ %>
+          <div class="container">
+          <div class="row">
+          <div class="col col-lg-4">
+            <h4><strong>#id:</strong> <%= id[i] %></h4><br>
+            <img src="<%= photo[i] %>" alt="mars-img" style="width:100%;max-width:300px;"><br><br>
+          </div>
+          <div class="col col-lg-4">
+            <% if(photo[i+1]){%>
+            <h4><strong>#id:</strong> <%= id[i+1] %></h4><br>
+            <img class="img-fluid" src="<%= photo[i+1] %>" alt="mars-img" style="width:100%;max-width:300px;"><br><br>
+            <% } %>
+          </div>
+          <div class="col col-lg-4">
+            <% if(photo[i+2]){%>
+            <h4><strong>#id:</strong> <%= id[i+2] %></h4><br>
+            <img class="img-fluid" src="<%= photo[i+2] %>" alt="mars-img" style="width:100%;max-width:300px;"><br><br>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <% } %>
+      <% } %>
+      <% id.length = 0; %>
+        <% photo.length = 0; %>
+  </div>
+    <footer>
+      <div class="footer-padding"></div>
+        <div class="footer">
+          <p>Made with ❤️ by Vaibhav in 🇮🇳 || 🤝 vaibhav.12may95@gmail.com</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
